@@ -1,3 +1,8 @@
+
+
+
+
+
 // creates the first Nick Cage
 var cageOne = {
 	firstName:  "Nick",
@@ -20,7 +25,17 @@ var cageOne = {
 
     cageTwo.health = (cageTwo.health - damage);
   }
+
 }
+
+var setHealth = function () {
+	healthTotal = document.getElementById('health1').innerHTML = 100;
+  return healthTotal - cageTwo.health;
+	console.log(healthTotal);
+};
+
+
+
 // creates the second Nick Cage
 var cageTwo = {
 	firstName:  "Nick",
@@ -32,10 +47,10 @@ var cageTwo = {
 	dead:  false,
 	doDamage: function ()  {
 	// gen random # for damage
-	var damage = Math.floor(Math.random() * cageTwo.str +1);
+	var damage = Math.floor(Math.random() * cageTwo.str + 1);
 	// decides if other Nick Cage is dead
   if (damage >= cageOne.health){
-        person.dead = true;
+        cageOne.dead = true;
         console.log("CageOne has taken " + damage +" points and has died");
       } else {
         console.log("CageOne takes " + damage + " points of damage and lives!");
@@ -44,5 +59,3 @@ var cageTwo = {
     cageOne.health = (cageOne.health - damage);
   }
 }
-
-
