@@ -59,3 +59,11 @@ var cageTwo = {
     cageOne.health = (cageOne.health - damage);
   }
 }
+
+var cageOneAttack = function () {
+	cageOne.doDamage();
+};
+
+var cageTwoAttack = function () {
+	cageTwo.doDamage();
+};
