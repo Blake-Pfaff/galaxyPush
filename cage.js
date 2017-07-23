@@ -1,6 +1,13 @@
 
 
+// attaches the first button to the cageOneAttack function
+document.getElementById('btn1').onclick = function() {
+	cageOneAttack();
+}
 
+document.getElementById('btn2').onclick = function() {
+	cageTwoAttack();
+}
 
 
 // creates the first Nick Cage
