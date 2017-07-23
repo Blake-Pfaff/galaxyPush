@@ -1,14 +1,16 @@
 
-
+window.onload = function() {
 // attaches the first button to the cageOneAttack function
-document.getElementById('btn1').onclick = function() {
-	cageOneAttack();
+  document.getElementById('btn1').onclick = function() {
+	  cageOneAttack();
+    document.getElementById("bar2").textContent = cageTwo.health;
+  }
+// attaches the second button to the cageOneAttack function
+  document.getElementById('btn2').onclick = function() {
+	  cageTwoAttack();
+    document.getElementById("bar1").textContent = cageOne.health;
+  }
 }
-
-document.getElementById('btn2').onclick = function() {
-	cageTwoAttack();
-}
-
 
 // creates the first Nick Cage
 var cageOne = {
@@ -74,3 +76,6 @@ var cageOneAttack = function () {
 var cageTwoAttack = function () {
 	cageTwo.doDamage();
 };
+
+var textForHealthBar1 = document.getElementById("bar1").textContent;
+var textForHealthBar2 = document.getElementById("bar2").textContent;
