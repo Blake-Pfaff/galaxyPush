@@ -3,12 +3,21 @@ window.onload = function() {
 // attaches the first button to the cageOneAttack function
   document.getElementById('btn1').onclick = function() {
 	  cageOneAttack();
+        // sets the health total of cageOne after damage
     document.getElementById("bar2").textContent = cageTwo.health;
+    if (cageTwo.dead === true) {
+       document.getElementById("twoIsDead").textContent = "CAGE TWO HAS DIED";
+        }
+
   }
 // attaches the second button to the cageOneAttack function
   document.getElementById('btn2').onclick = function() {
 	  cageTwoAttack();
+    // sets the health total of cageOne after damage
     document.getElementById("bar1").textContent = cageOne.health;
+    if (cageOne.dead === true) {
+       document.getElementById("oneIsDead").textContent = "CAGE ONE HAS DIED";
+        }
   }
 }
 
@@ -76,6 +85,9 @@ var cageOneAttack = function () {
 var cageTwoAttack = function () {
 	cageTwo.doDamage();
 };
-
+// adds the reactive health totals in vars
 var textForHealthBar1 = document.getElementById("bar1").textContent;
 var textForHealthBar2 = document.getElementById("bar2").textContent;
+
+var deadTextTow = document.getElementById("twoIsDead").textContent;
+var deadTextOne = document.getElementById("oneIsDead").textContent;
